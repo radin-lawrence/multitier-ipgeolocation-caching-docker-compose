@@ -204,6 +204,19 @@ Here we are using a load balancer to manage the request between the client and f
 Define the configuration for the Nginx webserver.
 
 ```bash
+upstream frontend {
+    server geolocation-frontend-1:8080;
+    server geolocation-frontend-2:8080;
+    server geolocation-frontend-3:8080;
+    
+}
+server {
+    listen 80;
+    server_name example.com www.example.com;
+    location / {
+        proxy_pass http://frontend;
+    }
+}
 
 ```
 
@@ -325,7 +338,9 @@ networks:
 volumes:
   mycert-auth:
 ```
-Create the containers with docker-compose up and the -d flag, the site will load with out ssl
+  
+Create the containers with docker-compose up and the -d flag, the site will load with out ssl.
+  
 ```bash
 docker-compose up -d
 ```
