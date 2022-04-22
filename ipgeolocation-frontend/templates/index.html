@@ -11,8 +11,7 @@ th, td {
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 40px;
-  font-size: 30px;
-  text-align: center;
+  font-size: 20px;
 }
 div {
   width: 600px;
@@ -38,12 +37,29 @@ div {
 <table style="width:100%">
 
   <tr>
-  
-    <td>Usage = http://www.hostname.com/ip/ip-address</td>
-    
+    <td>Continent Name</td>
+    <td>{{ continent_name }}</td>
   </tr>
-
   
+  <tr>
+    <td>Continent Code</td>
+    <td>{{ continent_code }}</td>
+  </tr>
+  
+  <tr>
+    <td>Country Name</td>
+    <td>{{ country_name }}</td>
+  </tr>
+  
+  <tr>
+    <td>Isp</td>
+    <td>{{ isp }}</td>
+  </tr>
+  
+  <tr>
+    <td>Cached</td>
+    <td>{{ cached }}</td>
+  </tr>
   
 </table>
 
