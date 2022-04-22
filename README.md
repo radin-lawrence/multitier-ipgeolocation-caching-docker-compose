@@ -28,9 +28,13 @@ The paid plans start at $15/month.
 
 In order to reduce the request count sent to API, we are making use of caching service with the use of Redis.
 
+![image](https://user-images.githubusercontent.com/100775027/164792312-af18a4bb-262d-4d7f-8788-4458a59e1f0b.png)
+
 When a user makes a request, the API service calls Redis to see if the IP is cached, and if it isn't, the API connects the ipgeolocation database to acquire the IP information. Rather than sending the information to the user, the API service caches it in Redis before giving it to the user. So, the following time a user makes a request for the same IP, there is no need for an API request because the information can be retrieved from Redis cache, reducing API queries.
 
 If there is more than one connection to an API at the same time, it can't handle them all at once, thus we're moving to a multi-layer architecture with three front-end services and three API layer and each handled by a load balancer. See the final architecture of the app.
+
+![image](https://user-images.githubusercontent.com/100775027/164792222-1c144577-6433-4c4c-a993-c94dbce1f6cd.png)
 
 # Creating docker-compose.yml file and Defining Services
 
@@ -545,6 +549,8 @@ docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/cert
 ```
 
  You should get a success message like "The dry run was successful".
+  
+  ![image](https://user-images.githubusercontent.com/100775027/164792462-2ce4f76a-98a5-427a-99b6-d6676732e6d6.png)
 
  Now that we can create certificates for the server, we want to use them in nginx to handle secure connections with end users' browsers.
 
@@ -760,3 +766,14 @@ docker-compose up -d --force-recreate --no-deps nginx
 ```
 
 We can check the IP info by using the URL http://example.com/ip/ followed by the required IP like http://example.com/ip/8.8.8.8
+  
+  ![image](https://user-images.githubusercontent.com/100775027/164792541-34948962-bef1-490f-be25-6087acc5dda5.png)
+  
+  ## Conclusion
+Here is a simple document on how to use ipgeolocation with caching. Please contact me if you encounter any difficulty with this.
+
+  
+ ### ⚙️ Connect with Me
+<p align="center">
+<a href="https://www.linkedin.com/in/radin-lawrence-8b3270102/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="mailto:radin.lawrence@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
