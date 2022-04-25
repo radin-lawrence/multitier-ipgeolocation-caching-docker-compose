@@ -593,8 +593,7 @@ services:
       - REDIS_HOST=redis-ipgeolocation
       - APP_PORT=8080
       - API_KEY=a65f448146884af995a8be4d1cfc461e
-    ports:
-      - "8084:8080"
+   
 
   api-2:
     image: radinlawrence/ipgeolocation-api:v1
@@ -606,8 +605,7 @@ services:
       - REDIS_HOST=redis-ipgeolocation
       - APP_PORT=8080
       - API_KEY=a65f448146884af995a8be4d1cfc461e
-    ports:
-      - "8085:8080"
+   
 
   api-3:
     image: radinlawrence/ipgeolocation-api:v1
@@ -619,8 +617,7 @@ services:
       - REDIS_HOST=redis-ipgeolocation
       - APP_PORT=8080
       - API_KEY=a65f448146884af995a8be4d1cfc461e
-    ports:
-      - "8086:8080"
+
   
   nginx-internal:
     image: nginx:latest
