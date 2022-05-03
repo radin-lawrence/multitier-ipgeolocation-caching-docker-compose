@@ -42,7 +42,7 @@ Create a docker-compose.yml file and add the below configuration to the file.
 
 **Redis cache**
 
-It's for caching and here I'm usin the redis latest version image.
+It's for caching and here I'm using the redis latest version image.
 
 ```bash
 version: "3"
