@@ -98,7 +98,7 @@ api-1:
       - API_KEY=<api key>
     
   ```
-  > Remember to replace " <api key> " with your own key. Here I'm using the free plan of ipgeolocation.io. to generate api_key: https://app.ipgeolocation.io/
+  > Remember to replace " api key " with your own key. Here I'm using the free plan of ipgeolocation.io to generate api_key: https://app.ipgeolocation.io/
 
 
 **Nginx-Internal load balancer**
